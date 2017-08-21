@@ -1,0 +1,21 @@
+{
+  "name": "tucao",
+  "version": "1.0.0",
+  "description": "YuYinet Tucao Application",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qxy735/tucao.git"
+  },
+  "author": "YuYinet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qxy735/tucao/issues"
+  },
+  "homepage": "https://github.com/qxy735/tucao#readme"
+}
