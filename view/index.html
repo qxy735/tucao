@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>禹译吐槽墙</title>
+		<meta  http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div id='top'>
+			<span id='send'></span>
+		</div>
+		<div id='main'></div>
+		<div id='send-form'>
+			<p class='title'><span>我要吐槽一下</span><a href="" id='close'></a></p>
+			<form action="/publish" method="post" id="publish_form" onsubmit="return check_form_data();">
+				<p>
+					<label for="username">昵称：</label>
+					<input type="text" name='username' id='username'/>
+					<span class="error" id="user_name_error"></span>
+				</p>
+				<p>
+					<label for="content">吐槽：(您还可以输入&nbsp;<span id='font-num'>50</span>&nbsp;个字)</label>
+					<textarea name="content" id='content'></textarea>
+					<label class="error" id="content_error"></label>
+					<div id='phiz'>
+						<img src="image/phiz/zhuakuang.gif" alt="抓狂" />
+						<img src="image/phiz/baobao.gif" alt="抱抱" />
+						<img src="image/phiz/haixiu.gif" alt="害羞" />
+						<img src="image/phiz/ku.gif" alt="酷" />
+						<img src="image/phiz/taikaixin.gif" alt="太开心" />
+						<img src="image/phiz/touxiao.gif" alt="偷笑" />
+						<img src="image/phiz/qian.gif" alt="钱" />
+						<img src="image/phiz/huaxin.gif" alt="花心" />
+						<img src="image/phiz/jiyan.gif" alt="挤眼" />
+					</div>
+				</p>
+				<span id='send-btn'></span>
+			</form>
+		</div>
+		<script type="text/javascript" src='js/jquery-1.7.2.min.js'></script>
+		<script type="text/javascript" src='js/index.js'></script>
+	</body>
+</html>
