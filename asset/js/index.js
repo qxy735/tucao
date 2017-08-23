@@ -1,4 +1,5 @@
 $(function(){
+	alert(new Date().getTime());
 	$.ajax({
 	    url : '/load',
 	    data:{},
@@ -142,12 +143,12 @@ function init() {
 		var content = $(this).val();
 		var lengths = check(content);  //调用check函数取得当前字数
 
-		//最大允许输入50个字
-		if (lengths[0] >= 50) {
+		//最大允许输入100个字
+		if (lengths[0] >= 100) {
 			$(this).val(content.substring(0, Math.ceil(lengths[1])));
 		}
 
-		var num = 50 - Math.ceil(lengths[0]);
+		var num = 100 - Math.ceil(lengths[0]);
 		var msg = num < 0 ? 0 : num;
 		//当前字数同步到显示提示
 		$( '#font-num' ).html( msg );

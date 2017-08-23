@@ -25,12 +25,15 @@ var connection = mysql.createConnection({
 // 链接数据库
 connection.connect();
 
+// 绑定静态资源目录
 app.use(express.static('asset'));
 
+// 默认请求地址，显示首页页面
 app.get('/*', function(request, response){
 	response.sendFile(__dirname + '/view/index.html');
 });
 
+// 发布吐槽内容地址
 app.post('/publish', urlencodedParser, function(request, response){
 	// 定义写入数据 SQL 语句
 	var sql = 'INSERT INTO message(username,content,addtime) VALUES(?,?,?)';
@@ -47,8 +50,9 @@ app.post('/publish', urlencodedParser, function(request, response){
     });
 });
 
+// 加载吐槽内容地址
 app.post('/load', function(request, response){
-	var  sql = 'SELECT * FROM message order by id asc limit 20';
+	var  sql = 'SELECT id,username,content FROM message order by id asc limit 20';
 
 	connection.query(sql, function (err, result) {
 		if(err){
