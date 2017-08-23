@@ -7,6 +7,9 @@ var app = express();
 // 加载文件操作工具
 var fs = require('fs');
 
+// 加载获取 ip 工具
+var ip = require('./asset/js/ip');
+
 // 加载解析主体内容工具
 var body_parser = require('body-parser');
 var urlencodedParser = body_parser.urlencoded({ extended: false });
@@ -36,13 +39,10 @@ app.get('/*', function(request, response){
 // 发布吐槽内容地址
 app.post('/publish', urlencodedParser, function(request, response){
 	// 定义写入数据 SQL 语句
-	var sql = 'INSERT INTO message(username,content,addtime) VALUES(?,?,?)';
-
-	// 当前时间戳
-	var timestamp = new Date().getTime();
+	var sql = 'INSERT INTO message(username,content,ip) VALUES(?,?,?)';
 
 	// 定义需要写入的数据
-	var parmas = [request.body.username, request.body.content, timestamp];
+	var parmas = [request.body.username, request.body.content, ip.get_client_ip(request)];
 
 	// 写入数据
 	connection.query(sql,parmas,function (err, result) {

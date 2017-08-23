@@ -1,5 +1,4 @@
 $(function(){
-	alert(new Date().getTime());
 	$.ajax({
 	    url : '/load',
 	    data:{},
