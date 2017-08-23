@@ -36,7 +36,7 @@ $(function(){
 	        	var num = 1;
 
 	        	for(var index in result){
-	        		var content_data = result[index].content.replace(/\[(.*)\]/g, function(item, tmp_index){
+	        		var content_data = result[index].content.replace(/\[([\u4e00-\u9fa5]+)\]/g, function(item, tmp_index){	        			
 				    	for (var i in face_indexs) {
 				    		if(face_indexs[i] == tmp_index){
 				    			return faces[i];
